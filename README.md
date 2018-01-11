@@ -5,3 +5,4 @@ LouPlus Team 4 https://www.shiyanlou.com/louplus/python
 * [ldmoko](https://github.com/ldmoko)
 * [smallyear](https://github.com/smallyear)
 * [衡阳火鸟](https://github.com/g27lzg)
+* [xxxx7xxx](https://github.com/xxxxxxx7)
