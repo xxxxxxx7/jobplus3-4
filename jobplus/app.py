@@ -8,6 +8,12 @@ def create_app(config):
     app.config.from_object(configs.get(config))
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = 0
 
+    register_blueprints(app)
     return app
 
+
+def register_blueprints(app):
+    from .handlers import front
+
+    app.register_blueprint(front)
 
