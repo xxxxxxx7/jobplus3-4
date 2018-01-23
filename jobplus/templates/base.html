@@ -5,7 +5,7 @@
         <title>{% block title %}{% endblock %}</title>
          {% block head_css %}
         <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" href="static/main.css">
+        <link rel="stylesheet" href="/static/main.css">
         {% endblock %}
     </head>
     <body>
@@ -31,9 +31,9 @@
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
-        <li><a href="/">公司注册</a></li>
-        <li><a href="/">求职者注册 </a></li>
-        <li><a href="/">登录</a></li>
+        <li><a href="{{ url_for('front.companyregister') }}">公司注册</a></li>
+        <li><a href="{{ url_for('front.userregister') }}">求职者注册 </a></li>
+        <li><a href="{{ url_for('front.login') }}">登录</a></li>
 
     </ul>
 
@@ -42,6 +42,15 @@
 </nav>
 
 <div class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <div class="alert alert-{{ category }} alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          {{ message }}
+          {% endfor %}
+          {% endif %}
+      {% endwith %}
      {% block body %}{% endblock %}
    
 </div>

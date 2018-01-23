@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% from "macros.html" import render_form %}
+
+{% block body %}
+<h3>编辑个人信息</h3>
+<div class="row">
+        <div class="col-md-3" style="padding-top:30px;">
+            <h4>用户</h4>
+            <div class="list-group">
+                <a href="/user/profile" class="list-group-item">个人信息</a>
+                <a href="/user/resume" class="list-group-item">简历管理</a>
+                <a href="/user/application" class="list-group-item">投递管理</a>
+    
+            </div>
+        </div>
+        <div class="col-md-9">
+            
+    <div class="page-header">
+        <h3>个人信息</h3>
+    </div>
+<div class="form">
+{{ render_form(form, url_for('user.profile')) }}
+</div>
+{% endblock %}
