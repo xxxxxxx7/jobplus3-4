@@ -3,10 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}{% endblock %}</title>
-        <link rel="stylesheet" href="http://labfile.oss.aliyuncs.com/courses/923/week7/code/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+         {% block head_css %}
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="static/main.css">
+        {% endblock %}
     </head>
     <body>
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -35,20 +38,24 @@
     </ul>
 
     </div>
-
-
-
-
-
-
 </div>
 </nav>
 
 <div class="container">
-  {% block body %}{% endblock %}
-  {% block footer %}{% endblock %}
+     {% block body %}{% endblock %}
+   
 </div>
+    {% block footer %}
+        <footer class="footer navbar-fixed-bottom">
+            <div class="container">
+                <p>&copy; jobplus 2018</p>
+            </div>
+        </footer>
+    {% endblock %}
 
-
+    {% block tail_js %}
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {% endblock %}
     </body>    
 </html>

@@ -101,4 +101,6 @@ venv.bak/
 /site
 
 # mypy
+migrations/
+
 .mypy_cache/

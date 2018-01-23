@@ -1,7 +1,64 @@
 {% extends 'base.html' %}
 
-{% block title %}Index{% endblock %}
+{% from "macros.html" import render_job_details,render_company_details %}
 
-{% block body %} {% endblock %}
+{% block title %}JobPlus{% endblock %}
+
+{% block body %}
+<div class="jumbotron ">
+	<div class="container">
+		<h1>JobPlus</h1>
+		<h2>让找工作更简单</h2>
+		<p><a class="btn btn-primary btn-lg" role="button" href="/jobs/">
+        查看更多</a>
+	</div>
+</div>
+
+<div class="row">
+  <ul id="job" class="nav nav-tabs">
+    <li role="presentation" class="active"><a href="#new_company" data-toggle="tab">最新公司</a></li>
+    <li role="presentation"><a href="#new_job" data-toggle="tab">最新岗位</a></li>
+  </ul>
+</div>
+
+
+<div class="row">
+<div  class="tab-content">
+  <div class="tab-pane fade in active" id="new_company">
+  		<div class="home-section-header">
+		    <a href="/companys/">
+		    	<span class="home-section-title">全部公司</span>
+		    </a>
+		    <a href="/companys/" class="see-more" >更多&gt;</a>
+		</div>
+		<div class="row">
+		  	<div class="container">
+		  		{% for company in companys %}
+		        	{{ render_company_details(company) }}
+		   		 {% endfor %}
+			</div>
+		</div>
+  </div>
+  <div class="tab-pane fade" id="new_job">
+  		<div class="home-section-header">
+		    <a href="/jobs/">
+		    	<span class="home-section-title">全部职位</span>
+		    </a>
+		    <a href="/jobs/" class="see-more" >更多&gt;</a>
+		</div>
+		<div class="row">
+		  	<div class="container">
+		  		{% for job in jobs %}
+		        	{{ render_job_details(job) }}
+		   		 {% endfor %}
+
+			</div>
+		</div>
+    </div>
+</div>
+</div>
+
+
+ {% endblock %}
 
 
