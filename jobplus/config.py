@@ -3,6 +3,7 @@ import os
 
 class BaseConfig():
     SECRET_KEY = 'ABCabc'
+    INDEX_PER_PAGE = 6
 
 
 class DevelopmentConfig(BaseConfig):

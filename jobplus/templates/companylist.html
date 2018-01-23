@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% from "macros.html" import render_pagination %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+<div class="row">
+  {% for company in pagination.items %}
+  <div class="col-sm-6 col-md-4 company">
+    <div class="thumbnail">
+    <a href="{{ company.url }}" target="_blank">
+        <img src="{{ company.image_url }}" alt="">
+        <div class="caption">
+            <h4 class="company__name">{{ company.name }}</h4>
+            <p class="company__tags">{{ company.tags }}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{{ render_pagination(pagination, 'front.companylist') }}
+{% endblock %}
