@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% from "macros.html" import render_pagination %}
+
+{% block title %}JOBS{% endblock %}
+
+{% block body %}
+<div class="row">
+  {% for job in pagination.items %}
+    <div class="caption">
+        <a href="{{'job.details', job_id=job.id }}" target="_blank">
+        <h4 class="job_name">{{ job.name }}</h4>
+        </a>
+        <p>{{ job.salary_low }} - {{ job.salary_high }} , {{ job.experience_requirement }}, </p>
+
+
+        <a href="{{'  ', company_id=job.company_id }}" target="_blank">
+        <h4 class="company_name">{{ job.company }}</h4>
+        </a>
+       
+
+    </div>
+  {% endfor %}
+</div>
+
+{{ render_pagination(pagination, 'job.joblist') }}
+{% endblock %}

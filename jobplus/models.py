@@ -1,6 +1,7 @@
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin
+from flask import url_for
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
@@ -175,6 +176,10 @@ class Job(Base):
 
     def __repr__(self):
         return '<Job {}>'.format(self.name)
+
+    @property
+    def url(self):
+        return url_for('job.detail', job_id=self.id)
 
 
 class Dilivery(Base):
