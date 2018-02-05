@@ -1,0 +1,11 @@
+{% block title %}
+公司注册
+{% endblock %}
+
+{% block body %}
+  <h2>Register</h2>
+  <div class="form">
+      {{render_form(form, url_for('front.companyregister')) }}
+  </form>
+  </div>
+{% endblock %}

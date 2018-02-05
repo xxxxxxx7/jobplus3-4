@@ -9,12 +9,12 @@ class BaseConfig():
 class DevelopmentConfig(BaseConfig):
     path = os.path.join(os.getcwd(), 'jobplus.db').replace('\\', '/')
     # SQLALCHEMY_DATABASE_URI='sqlite:///{}'.format(path)
-    SQLALCHEMY_DATABASE_URI='mysql://root@localhost/jobplus?charset=utf8'
+    SQLALCHEMY_DATABASE_URI='mysql://root:root@127.0.0.1/jobplus?charset=utf8'
     DEBUG = 1
 
 
 class ProductionConfig(BaseConfig):
-    SQLALCHEMY_DATABASE_URI='mysql://root@localhost/jobplus?charset=utf8'
+    SQLALCHEMY_DATABASE_URI='mysql://root@127.0.0.1/jobplus?charset=utf8'
     DEBUG = 0
 
 

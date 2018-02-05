@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- {% macro render_job_details(job) %}
     <div class="caption">
         <a href="{{'job.details', job_id=job.id }}" target="_blank">
@@ -13,6 +14,9 @@
 
     </div>
 {% endmacro %} -->
+=======
+<!-- 删除没用的方法 -->
+>>>>>>> upstream/master
 
 {% macro render_company_details(company) %}
     <div class="thumbnail">
@@ -47,6 +51,7 @@
         {% for error in field.errors %}
         <span class="help-block">{{ error }}</span>
         {% endfor %}
+        <span class="help-block">{{ field.errors.0 }}</span>
       {% endif %}
     </div>
     {% endif %}
